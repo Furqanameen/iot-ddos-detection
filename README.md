@@ -2,6 +2,10 @@
 # IoT-Enabled DDoS Detection — Complete Running Guide
 ## Ubuntu Setup & Execution Instructions
 
+## Basic Dashboard View
+
+![Basic Dashboard View](fyp-intial-dashbaord.png)
+
 ---
 
 ## System Requirements
