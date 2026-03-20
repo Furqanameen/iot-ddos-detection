@@ -69,9 +69,7 @@ def build_cnn_lstm_gru(input_shape: tuple, num_classes: int = 2) -> Model:
         optimizer=tf.keras.optimizers.Adam(
             learning_rate=cfg["learning_rate"]),
         loss='sparse_categorical_crossentropy',
-        metrics=['accuracy',
-                 tf.keras.metrics.Precision(name='precision'),
-                 tf.keras.metrics.Recall(name='recall')])
+        metrics=[tf.keras.metrics.SparseCategoricalAccuracy(name='accuracy')])
     return model
 
 

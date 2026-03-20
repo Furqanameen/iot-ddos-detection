@@ -168,6 +168,10 @@ source venv/bin/activate
 python federated/client.py --id 2
 ```
 
+Federated settings are in `config.py` under `FL`:
+- `num_clients`: number of client processes to run (e.g., 3 clients: id 0, 1, 2)
+- `min_clients`: minimum clients required by the server each round (keep equal to `num_clients` for full participation)
+
 Server will run for 10 rounds (~5-10 minutes), then stop.
 Results saved to: `results/federated_rounds.json`
 

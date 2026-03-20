@@ -67,6 +67,7 @@ FL = {
     "server_address": "0.0.0.0:8080",
     "num_rounds":     10,
     "num_clients":    3,
+    "min_clients":    3,
     "fraction_fit":   1.0,
     "local_epochs":   2,
 }

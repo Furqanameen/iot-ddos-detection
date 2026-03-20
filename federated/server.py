@@ -67,11 +67,13 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
 
 
 def run_server(n_features: int = 78):
+    min_clients = int(FL.get("min_clients", FL.get("num_clients", 2)))
+
     print(f"\n{'='*60}")
     print(f"  Federated Learning Server")
     print(f"  Address : {FL['server_address']}")
     print(f"  Rounds  : {FL['num_rounds']}")
-    print(f"  Min clients: {FL['min_clients']}")
+    print(f"  Min clients: {min_clients}")
     print(f"{'='*60}\n")
     print("  Waiting for clients to connect...")
     print(f"  Start clients with: python federated/client.py --id 0")
@@ -82,9 +84,9 @@ def run_server(n_features: int = 78):
         n_features=n_features,
         fraction_fit=FL["fraction_fit"],
         fraction_evaluate=1.0,
-        min_fit_clients=FL["min_clients"],
-        min_evaluate_clients=FL["min_clients"],
-        min_available_clients=FL["min_clients"],
+        min_fit_clients=min_clients,
+        min_evaluate_clients=min_clients,
+        min_available_clients=min_clients,
         initial_parameters=get_initial_parameters(n_features),
     )
 
